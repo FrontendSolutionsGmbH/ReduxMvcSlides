@@ -40,4 +40,6 @@ store.dispatch({ type: 'INCREMENT' })
 store.dispatch({ type: 'INCREMENT' })
 // 2
 store.dispatch({ type: 'DECREMENT' })
+store.dispatch({ type: 'DECREMENT' })
+store.dispatch({ type: 'DECREMENT' })
 // 1

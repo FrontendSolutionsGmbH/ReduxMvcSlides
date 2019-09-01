@@ -6,9 +6,11 @@ const {createStore}=require('redux')
  */
 const actionsMap={
     'INCREMENT':(state,action)=>{
+        console.log('increment',state,action)
         return state+1;
     },
     'DECREMENT': (state,action)=>{
+        console.log('decrement',state,action)
         return state-1;
     }
 }
@@ -27,14 +29,14 @@ const actionsMap={
  */
 function counter(state = 0, action) {
     // here an action is handled by action map method, or current state is returned
-    return (actionsMap[action.type]&&actionsMap[action.type](state,action))||state
+    return actionsMap[action.type]?actionsMap[action.type](state,action):state
 }
 
 // extract reusable actions
-const IncrementAction=()=>{
+export const IncrementAction=()=>{
     return {type:'INCREMENT'}
 }
-const DecrementAction=()=>{
+export const DecrementAction=()=>{
     return {type:'DECREMENT'}
 }
 

@@ -27,7 +27,7 @@ const actionsMap={
  */
 function counter(state = 0, action) {
     // here an action is handled by action map method, or current state is returned
-    return (actionsMap[action.type]&&actionsMap[action.type](state,action))||state
+    return actionsMap[action.type]?actionsMap[action.type](state,action):state
 }
 
 // extract reusable actions
@@ -54,5 +54,7 @@ store.dispatch(IncrementAction())
 // 1
 store.dispatch(IncrementAction())
 // 2
+store.dispatch(DecrementAction())
+store.dispatch(DecrementAction())
 store.dispatch(DecrementAction())
 // 1

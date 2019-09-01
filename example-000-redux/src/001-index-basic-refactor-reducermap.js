@@ -27,7 +27,7 @@ const actionsMap={
  */
 function counter(state = 0, action) {
     // here an action is handled by action map method, or current state is returned
-    return (actionsMap[action.type]&&actionsMap[action.type](state,action))||state
+    return actionsMap[action.type]?actionsMap[action.type](state,action):state
 }
 
 // Create a Redux store holding the state of your app.
@@ -46,5 +46,7 @@ store.dispatch({ type: 'INCREMENT' })
 // 1
 store.dispatch({ type: 'INCREMENT' })
 // 2
+store.dispatch({ type: 'DECREMENT' })
+store.dispatch({ type: 'DECREMENT' })
 store.dispatch({ type: 'DECREMENT' })
 // 1
