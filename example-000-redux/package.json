@@ -1,0 +1,16 @@
+{
+  "name": "example-000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/000-index-basic.js",
+    "start-refactor1": "node src/001-index-basic-refactor-reducermap.js",
+    "start-refactor2": "node src/002-index-basic-refactor-actions.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^4.0.4"
+  }
+}
